@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
+    
+    <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+</head>
+
+<body>
+  <div class="container">
+
+    <!--브레드크럼 영역-->
+    <div class="row">
+      <div class="col bg-secondary">빈곳간</div>
+    </div>
+
+    <div class="row">
+      <div class="col bg-primary">
+        <h1>장소 등록</h1>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col bg-info">
+    <div class="container text-center">
+        <div class="row mb-5">
+            <div class="col-4">            
+                <div class="row">주소</div>
+            </div>
+            <div class="col-4">              
+              <input type="text" id="c_main_address" placeholder="주소 입력" readonly>
+              <button type = "button" id="addressSearch" onclick="findAdd()">주소 검색</button>  
+            </div>
+        </div>
+        <div class="row mb-5">
+            <div class="col-4">            
+                <div class="row">장소 이름</div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="placeName1" placeholder="장소 이름">
+                </div>    
+            </div>
+        </div>
+        <div class="row mb-5">
+            <div class="col-4">            
+              <div class="row">장소 대분류</div>
+            </div>
+            <div class="col-4">
+              <div>
+              <select required="true" id = "catPrimary" class="custom-select my-1 mr-sm-2" aria-label=".form-select-sm example"></select>
+            </div>
+            </div>
+        </div>
+        <div class="row mb-5">
+            <div class="col-4">            
+              <div class="row">장소 중분류</div>
+            </div>
+            <div class="col">
+              <div>
+              <select id = "catSecondary" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                <option selected>장소 중분류</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
+            </div>
+        </div>
+
+        <div class="row mb-5">
+          <div class="col-4">            
+            <div class="row">영업일시</div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <input type="text" class="form-control" id="openTime" placeholder="영업일시">
+            </div>  
+          </div>
+        </div>
+
+        <div class="row mb-5">
+          <div class="col-4">            
+            <div class="row">주차장여부</div>
+          </div>
+          <div class="col">
+            <div class="form-check">
+              <input type="radio" name="parking" class="form-check-input" id="parkingTrue" value=true>
+              <label class="form-check-label" for="parkingTrue">예</label>
+            </div>
+            <div class="form-check">
+              <input type="radio" name="parking" class="form-check-input" id="parkingFalse" value=false>
+              <label class="form-check-label" for="parkingFalse">아니오</label>
+            </div>  
+          </div>
+        </div>
+      
+        <div class="row mb-5">
+          <div class="col-4">            
+            <div class="row">팝업여부</div>
+          </div>
+          <div class="col">
+            <div class="form-check">
+              <input type="radio" name="popup" class="form-check-input" id="popupTrue" value=true>
+              <label class="form-check-label" for="popupTrue">예</label>
+            </div>
+            <div class="form-check">
+              <input type="radio" name="popup" class="form-check-input" id="popupFalse" value=false>
+              <label class="form-check-label" for="popupFalse">아니오</label>
+            </div>  
+          </div>
+        </div>
+
+        <div class="row mb-5">
+          <div class="col-4">            
+            <div class="row">참조링크</div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <input type="text" class="form-control" id="refLink" placeholder="참조링크">
+            </div>  
+          </div>
+        </div>
+      </div>
+    </div>
+      
+
+<!--         
+        <div class="row mb-5">
+            <div class="col">            
+                <div class="row">최근 방문 일시</div>
+            </div>
+            <div class="col">   
+                <input class="form-control" type="text" value="최근 방문 일시" aria-label="readonly input example" readonly>
+            </div>            
+        </div>
+        <div class="row mb-5">
+            <div class="col">            
+                <div class="row">리뷰</div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="review1" placeholder="리뷰">
+                </div>           
+            </div>
+        </div> -->
+
+    </div>
+
+    <!--버튼 영역-->
+    <div class="row">
+      <div class="col">
+        <button type="submit" class="btn btn-primary" id="saveBtn">저장</button>  
+      </div>
+      <div class="col">
+        <div class="col">
+          <button class="btn btn-primary" id="closeBtn">닫기</button>  
+        </div>
+    </div>
+ 
+  </div>
+
+</body>
+
+<script src="./placeMaster.js"></script>
+
+</html>

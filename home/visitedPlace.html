@@ -1,0 +1,118 @@
+<template id="visited-place-tmpl">
+
+<script>console.log("asd")</script>
+
+    <div class="top">
+        <div class="title">갔던 곳 등록</div>                  
+        <a href="#" class="p_close">닫기</a>
+        <button id="saveVisitedPlace" type="submit" class="btn btn-primary" value="Submit" onclick="save()">저장</button>
+    </div>
+
+    <div class="ct">
+        <div class="row mb-5">
+            <div class="col">            
+                <div class="row">장소 선택</div>
+            </div>
+            <div class="col">
+                <div>
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                    <option selected>장소 선택</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+            </div>
+            </div>
+        </div>
+
+        <div class="row mb-5">
+            <div class="col">            
+                <div class="row">방문 일시</div>
+            </div>
+            <div class="col">   
+                <input type="datetime-local" name="schedule" min="2024-05-27T09:00" max="2124-05-26T00:00" />
+            </div>             
+        </div>
+
+        <div class="row mb-5">
+            <div class="col">            
+                <div class="row">이동 방식</div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="howToGo" placeholder="이동 방식">
+                </div>           
+            </div>
+        </div>
+
+        <!-- <div class="row mb-5">
+            <div class="col">            
+                <div class="row">주차장</div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="howToGo" placeholder="이동 방식">
+                </div>           
+            </div>
+        </div> -->
+    <!-- 
+        <div class="row mb-5">
+            <div class="col">            
+                <div class="row">혼잡도</div>
+            </div>
+            <div class="col">   
+                <button class="btn" id="green"><i class="fa fa-thumbs-up fa-lg" aria-hidden="true"></i></button>
+                <button class="btn" id="red"><i class="fa fa-thumbs-down fa-lg" aria-hidden="true"></i></button>
+            </div>             
+        </div>       -->
+        
+        <div class="row mb-5">
+            <div class="col">            
+                <div class="row">만족 여부</div>
+            </div>
+            <div class="col">   
+                <button class="btn" id="green"><i class="fa fa-thumbs-up fa-lg" aria-hidden="true"></i></button>
+                <button class="btn" id="red"><i class="fa fa-thumbs-down fa-lg" aria-hidden="true"></i></button>
+            </div>             
+        </div>    
+
+        <div class="row mb-5">
+            <div class="col">            
+                <div class="row">재방문 의사</div>
+            </div>
+            <div class="col">   
+            <button class="btn" id="green"><i class="fa fa-thumbs-up fa-lg" aria-hidden="true"></i></button>
+            <button class="btn" id="red"><i class="fa fa-thumbs-down fa-lg" aria-hidden="true"></i></button>
+            </div>             
+        </div>    
+
+        <div class="row mb-5">
+            <div class="col">            
+                <div class="review">리뷰</div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="review1" placeholder="리뷰">
+                </div>           
+            </div>
+        </div>
+
+        <div class="row mb-5">
+            <div class="col">            
+                <div class="row">태그</div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                        <option selected>태그</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>           
+            </div>
+        </div>
+
+    </div>
+
+</template>
